@@ -6,244 +6,278 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/z"
-        android:layout_width="53dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="0"
-        android:inputType="textPersonName"
-        android:textSize="34sp"
-        app:layout_constraintStart_toEndOf="@+id/hour4"
-        app:layout_constraintTop_toBottomOf="@+id/timelimit" />
-
-    <EditText
-        android:id="@+id/mz"
-        android:layout_width="53dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="mz"
-        android:textSize="34sp"
-        app:layout_constraintStart_toEndOf="@+id/hour6"
-        app:layout_constraintTop_toBottomOf="@+id/middletime" />
-
-    <Button
-        android:id="@+id/voice"
-        android:layout_width="261dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="118dp"
-        android:text="voice"
-        app:layout_constraintBottom_toTopOf="@+id/voiceeffect"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/voiceeffect"
-        android:layout_width="261dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="118dp"
-        android:text="voiceeffect"
-        app:layout_constraintBottom_toTopOf="@+id/vibration"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/voice" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/vibration"
-        android:layout_width="261dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="118dp"
-        android:text="vibration"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/voiceeffect" />
+            <EditText
+                android:id="@+id/minute_input_text1"
+                android:layout_width="53dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="6dp"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textSize="34sp"
+                app:layout_constraintStart_toEndOf="@+id/hour_text_view1"
+                app:layout_constraintTop_toBottomOf="@+id/timelimit" />
 
-    <TextView
-        android:id="@+id/sound"
-        android:layout_width="146dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="8dp"
-        android:text="sound"
-        android:textColorLink="#3F51B5"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/voice"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setup" />
+            <TextView
+                android:id="@+id/hour_text_view1"
+                android:layout_width="62dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="2dp"
+                android:text="hour"
+                android:textSize="28sp"
+                app:layout_constraintStart_toEndOf="@+id/hour_input_text1"
+                app:layout_constraintTop_toBottomOf="@+id/timelimit" />
 
-    <TextView
-        android:id="@+id/timer"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="24dp"
-        android:text="varietytimer"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/setup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="53dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="556dp"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="textPersonName"
+                android:text="mz"
+                android:textSize="34sp"
+                app:layout_constraintStart_toEndOf="@+id/my"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/setup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="setup"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/sound"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+            <EditText
+                android:id="@+id/my"
+                android:layout_width="53dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="9dp"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="textPersonName"
+                android:textSize="34sp"
+                app:layout_constraintStart_toEndOf="@+id/hour_text_view2"
+                app:layout_constraintTop_toBottomOf="@+id/middletime_text_view" />
 
-    <TextView
-        android:id="@+id/timelimit"
-        android:layout_width="413dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="72dp"
-        android:text="timelimit"
-        android:textSize="52sp"
-        app:layout_constraintBottom_toTopOf="@+id/z"
-        app:layout_constraintTop_toBottomOf="@+id/vibration"
-        tools:layout_editor_absoluteX="0dp" />
+            <TextView
+                android:id="@+id/setup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="327dp"
+                android:layout_marginBottom="19dp"
+                android:text="setup"
+                android:textSize="34sp"
+                app:layout_constraintBottom_toTopOf="@+id/sound_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timer" />
 
-    <TextView
-        android:id="@+id/hour"
-        android:layout_width="62dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="24dp"
-        android:text="hour"
-        android:textSize="28sp"
-        app:layout_constraintStart_toEndOf="@+id/x"
-        app:layout_constraintTop_toBottomOf="@+id/timelimit" />
+            <Button
+                android:id="@+id/voice_button"
+                android:layout_width="261dp"
+                android:layout_height="46dp"
+                android:text="voice"
+                app:layout_constraintBottom_toTopOf="@+id/voiceeffect_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sound_text_view" />
 
-    <TextView
-        android:id="@+id/hour5"
-        android:layout_width="62dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="24dp"
-        android:text="hour"
-        android:textSize="28sp"
-        app:layout_constraintStart_toEndOf="@+id/mx"
-        app:layout_constraintTop_toBottomOf="@+id/middletime" />
+            <TextView
+                android:id="@+id/sound_text_view"
+                android:layout_width="146dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="265dp"
+                android:layout_marginBottom="9dp"
+                android:text="sound"
+                android:textColorLink="#3F51B5"
+                android:textSize="48sp"
+                app:layout_constraintBottom_toTopOf="@+id/voice_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setup" />
 
-    <TextView
-        android:id="@+id/hour7"
-        android:layout_width="99dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="24dp"
-        android:text="second"
-        android:textSize="28sp"
-        app:layout_constraintStart_toEndOf="@+id/mz"
-        app:layout_constraintTop_toBottomOf="@+id/middletime" />
+            <TextView
+                android:id="@+id/middletime_text_view"
+                android:layout_width="417dp"
+                android:layout_height="59dp"
+                android:layout_marginTop="3dp"
+                android:text="middletime"
+                android:textSize="54sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/minute_input_text1" />
 
-    <TextView
-        android:id="@+id/hour8"
-        android:layout_width="99dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="24dp"
-        android:text="second"
-        android:textSize="28sp"
-        app:layout_constraintStart_toEndOf="@+id/z"
-        app:layout_constraintTop_toBottomOf="@+id/timelimit" />
+            <Button
+                android:id="@+id/intent_button"
+                android:layout_width="206dp"
+                android:layout_height="0dp"
+                android:text="push"
+                tools:layout_editor_absoluteX="103dp"
+                tools:layout_editor_absoluteY="632dp" />
 
-    <TextView
-        android:id="@+id/hour4"
-        android:layout_width="95dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="24dp"
-        android:text="minute"
-        android:textSize="28sp"
-        app:layout_constraintStart_toEndOf="@+id/y"
-        app:layout_constraintTop_toBottomOf="@+id/timelimit" />
+            <TextView
+                android:id="@+id/hour6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="51dp"
+                android:layout_marginTop="9dp"
+                android:text="minute"
+                android:textSize="28sp"
+                app:layout_constraintStart_toEndOf="@+id/editText2"
+                app:layout_constraintTop_toBottomOf="@+id/middletime_text_view" />
 
-    <TextView
-        android:id="@+id/hour6"
-        android:layout_width="95dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="24dp"
-        android:text="minute"
-        android:textSize="28sp"
-        app:layout_constraintStart_toEndOf="@+id/my"
-        app:layout_constraintTop_toBottomOf="@+id/middletime" />
+            <TextView
+                android:id="@+id/second_text_view1"
+                android:layout_width="99dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="2dp"
+                android:text="second"
+                android:textSize="28sp"
+                app:layout_constraintStart_toEndOf="@+id/second_input_text1"
+                app:layout_constraintTop_toBottomOf="@+id/timelimit" />
 
-    <EditText
-        android:id="@+id/x"
-        android:layout_width="53dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="0"
-        android:inputType="textPersonName"
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timelimit" />
+            <Button
+                android:id="@+id/voiceeffect_button"
+                android:layout_width="261dp"
+                android:layout_height="46dp"
+                android:text="voiceeffect"
+                app:layout_constraintBottom_toTopOf="@+id/vibration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/voice_button" />
 
-    <EditText
-        android:id="@+id/mx"
-        android:layout_width="53dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="mx"
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/middletime" />
+            <EditText
+                android:id="@+id/hour_input_text_2"
+                android:layout_width="53dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="9dp"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textSize="34sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/middletime_text_view" />
 
-    <EditText
-        android:id="@+id/y"
-        android:layout_width="53dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="0"
-        android:inputType="textPersonName"
-        android:textSize="34sp"
-        app:layout_constraintStart_toEndOf="@+id/hour"
-        app:layout_constraintTop_toBottomOf="@+id/timelimit" />
+            <TextView
+                android:id="@+id/timelimit"
+                android:layout_width="413dp"
+                android:layout_height="62dp"
+                android:layout_marginBottom="2dp"
+                android:text="timelimit"
+                android:textSize="52sp"
+                app:layout_constraintBottom_toTopOf="@+id/minute_input_text1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vibration" />
 
-    <EditText
-        android:id="@+id/my"
-        android:layout_width="53dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="my"
-        android:textSize="34sp"
-        app:layout_constraintStart_toEndOf="@+id/hour5"
-        app:layout_constraintTop_toBottomOf="@+id/middletime" />
+            <EditText
+                android:id="@+id/second_input_text1"
+                android:layout_width="53dp"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textSize="34sp"
+                app:layout_constraintStart_toEndOf="@+id/minute_text_view1"
+                app:layout_constraintTop_toBottomOf="@+id/timelimit" />
 
-    <TextView
-        android:id="@+id/middletime"
-        android:layout_width="417dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="17dp"
-        android:text="middletime"
-        android:textSize="54sp"
-        app:layout_constraintBottom_toTopOf="@+id/mz"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/z" />
-        //app:layout_constraintTop_toBottomOf="@+id/x" />
+            <TextView
+                android:id="@+id/minute_text_view1"
+                android:layout_width="95dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="5dp"
+                android:text="minute"
+                android:textSize="28sp"
+                app:layout_constraintStart_toEndOf="@+id/minute_input_text1"
+                app:layout_constraintTop_toBottomOf="@+id/timelimit" />
 
-    <Button
-        android:id="@+id/pushButton"
-        android:layout_width="206dp"
-        android:layout_height="0dp"
-        android:text="push"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mz" />
+            <TextView
+                android:id="@+id/timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="158dp"
+                android:text="varietytimer"
+                android:textSize="48sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <Button
+                android:id="@+id/vibration"
+                android:layout_width="261dp"
+                android:layout_height="46dp"
+                android:layout_marginBottom="15dp"
+                android:text="vibration"
+                app:layout_constraintBottom_toTopOf="@+id/timelimit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/voiceeffect_button" />
+
+            <TextView
+                android:id="@+id/hour_text_view2"
+                android:layout_width="62dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="17dp"
+                android:text="hour"
+                android:textSize="28sp"
+                app:layout_constraintStart_toEndOf="@+id/hour_input_text_2"
+                app:layout_constraintTop_toBottomOf="@+id/middletime_text_view" />
+
+            <EditText
+                android:id="@+id/hour_input_text1"
+                android:layout_width="53dp"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                android:textSize="34sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timelimit" />
+
+            <TextView
+                android:id="@+id/hour7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="second"
+                android:textSize="28sp"
+                app:layout_constraintStart_toEndOf="@+id/hour6"
+                app:layout_constraintTop_toTopOf="@+id/my" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView><![CDATA[
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //app:layout_constraintTop_toBottomOf="@+id/x" />
+
+
+
+
+
+
+]]>
 </androidx.constraintlayout.widget.ConstraintLayout>

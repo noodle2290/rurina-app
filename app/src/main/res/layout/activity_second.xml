@@ -7,33 +7,9 @@
     tools:context=".SecondActivity">
 
     <TextView
-        android:id="@+id/periodtwo"
+        android:id="@+id/hour_count_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
-        android:gravity="center"
-        android:text=":"
-        android:textColor="#3F51B5"
-        android:textSize="150sp"
-        app:layout_constraintStart_toEndOf="@+id/minuteText"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="32dp"
-        android:gravity="center"
-        android:text="START"
-        app:layout_constraintBottom_toTopOf="@+id/stopButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/hourText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="94dp"
         android:layout_marginTop="262dp"
         android:gravity="center"
         android:text="00"
@@ -43,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/periodone"
+        android:id="@+id/colon1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="220dp"
@@ -51,11 +27,11 @@
         android:text=":"
         android:textColor="#3F51B5"
         android:textSize="150sp"
-        app:layout_constraintStart_toEndOf="@+id/hourText"
+        app:layout_constraintStart_toEndOf="@+id/hour_count_text_view"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/minuteText"
+        android:id="@+id/minute_count_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="262dp"
@@ -63,43 +39,64 @@
         android:text="00"
         android:textColor="#3F51B5"
         android:textSize="100sp"
-        app:layout_constraintStart_toEndOf="@+id/periodone"
+        app:layout_constraintStart_toEndOf="@+id/colon1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/secondText"
+        android:id="@+id/colon2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:gravity="center"
+        android:text=":"
+        android:textColor="#3F51B5"
+        android:textSize="150sp"
+        app:layout_constraintStart_toEndOf="@+id/minute_count_text_view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/second_count_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="262dp"
-        android:layout_marginEnd="94dp"
         android:gravity="center"
         android:text="00"
         android:textColor="#3F51B5"
         android:textSize="100sp"
+        app:layout_constraintStart_toEndOf="@+id/colon2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="START"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/periodtwo"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/minute_count_text_view" />
 
     <Button
         android:id="@+id/stopButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="24dp"
         android:gravity="center"
         android:text="STOP"
-        app:layout_constraintBottom_toTopOf="@+id/finishButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/start_button" />
 
     <Button
         android:id="@+id/finishButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginTop="24dp"
         android:gravity="center"
         android:text="FINISH"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stopButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

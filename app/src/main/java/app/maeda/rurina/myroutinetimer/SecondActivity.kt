@@ -3,55 +3,59 @@ package app.maeda.rurina.myroutinetimer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.util.Log
 import android.widget.TextView
+import androidx.core.view.isVisible
+import app.maeda.rurina.myroutinetimer.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
-
+    private lateinit var binding: ActivitySecondBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
+        binding = ActivitySecondBinding.inflate(layoutInflater).apply { setContentView(this.root) }
 
-        //hourText: TextViewを使う準備
-        val hourText: TextView = findViewById(R.id.hourText)
         //MainActivityから"hour"というキーワードでhourTextをもらう
-        val hour = intent.getStringExtra("hour")
-        Log.d(hour,"hour")
+        val hour = intent.getLongExtra("hour",0)
         //hourTextの字をTextViewに反映させる
-        hourText.text = hour.toString()
+        binding.hourCountTextView.text = hour.toString().padStart(2, '0')
 
-        //minuteText: TextViewを使う準備
-        val minuteText: TextView = findViewById(R.id.minuteText)
         //MainActivityから"minute"というキーワードでminuteTextをもらう
-        val minute = intent.getStringExtra("minute")
+        val minute = intent.getLongExtra("minute",0)
         //minuteTextの字をTextViewに反映させる
-        minuteText.text = minute.toString()
+        binding.minuteCountTextView.text = minute.toString().padStart(2, '0')
 
-        //second: TextViewを使う準備
-        val secondText: TextView = findViewById(R.id.secondText)
         //MainActivityから"second"というキーワードでsecondTextをもらう
-        val second= intent.getStringExtra("second")
+        val second = intent.getLongExtra("second",0)
         //secondTextの字をTextViewに反映させる
-        secondText.text = second.toString()
+        binding.secondCountTextView.text = second.toString().padStart(2, '0')
 
-       //残り時間をセット
-        var hoursTime:Int = hour!!.toInt()*3600000
-        var minutesTime:Int = minute!!.toInt()*60000
-        var secondsTime:Int = second!!.toInt()*1000
-        var Time:Int = hoursTime+minutesTime+secondsTime
+        var secondAll: Long = hour * 3600 + minute * 60 + second
         //タイマーを設定する
-//        val hoursTimer : CountDownTimer = object : CountDownTimer(hoursTime.toLong(),3600000)
-//        val minutesTimer : CountDownTimer = object : CountDownTimer(minutesTime.toLong(),60000)
-//        val secondsTimer : CountDownTimer = object : CountDownTimer(secondsTime.toLong(),1000)
+        val timer: CountDownTimer = object : CountDownTimer(secondAll * 1000, 1000) {
+            override fun onFinish() {
+                binding.startButton.isVisible = true
 
+                secondAll = hour * 3600 + minute * 60 + second
+            }
+
+            override fun onTick(millisUntilFinished: Long) {
+                secondAll--
+
+                binding.hourCountTextView.text = (secondAll / 3600).toString().padStart(2, '0')
+                binding.minuteCountTextView.text = ((secondAll % 3600) / 60).toString().padStart(2, '0')
+                binding.secondCountTextView.text = ((secondAll % 3600) % 60).toString().padStart(2, '0')
+            }
+        }
+        binding.startButton.setOnClickListener {
+            binding.startButton.isVisible = false
+            timer.start()
+        }
+
+        binding.stopButton.setOnClickListener {
+            binding.startButton.isVisible = true
+            binding.stopButton.isVisible = false
+            timer.cancel()
+        }
     }
-        //タイマーが終了するときに呼ばれる
-        fun onFinish(){
-       //ホーム画面に戻る
-       //残り時間をリセットする
-
-
 }
-    }
 

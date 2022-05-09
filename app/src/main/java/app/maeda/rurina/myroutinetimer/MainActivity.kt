@@ -5,46 +5,35 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import app.maeda.rurina.myroutinetimer.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
+    private lateinit var binding:ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val pushButton: Button = findViewById(R.id.pushButton)
-        //EditTextを使う準備
-        val x: EditText = findViewById(R.id.x)
-        //EditTextを使う準備
-        val y: EditText = findViewById(R.id.y)
-        //EditTextを使う準備
-        val z: EditText = findViewById(R.id.z)
-
-
+        binding = ActivityMainBinding.inflate(layoutInflater).apply { setContentView(this.root) }
 
         //intentButtonクリック時にSecondActivityへ画面遷移
-        pushButton.setOnClickListener {
-            //x:EditTextに入れられた数字をhourTextと定義する
-             val hourText = x.text.toString()
-            if( x == null){
-                var hourText = "00" }
+        binding.intentButton.setOnClickListener {
+            //hour_input_text1に入れられた数字をhourTextと定義する
+            val hourText = binding.hourInputText1.text.toString().toLong()
             //y:EditTextに入れられた数字をminuteTextと定義する
-            val minuteText = y.text.toString()
+            val minuteText = binding.minuteInputText1.text.toString().toLong()
             //z:EditTextに入れられた数字をsecondTextと定義する
-            val secondText = z.text.toString()
+            val secondText = binding.secondInputText1.text.toString().toLong()
 
 
 
             //SecondActivityに画面遷移する準備
-            val SecondPage = Intent(this, SecondActivity::class.java)
+            val secondActivityIntent = Intent(this, SecondActivity::class.java)
             //hourTextを”hour”というキーワードとしてSecondActivityに送る
-            SecondPage.putExtra("hour", hourText)
+            secondActivityIntent.putExtra("hour", hourText)
             //minuteTextを”minute”というキーワードとしてSecondActivityに送る
-            SecondPage.putExtra("minute", minuteText)
+            secondActivityIntent.putExtra("minute", minuteText)
             //secondTextを”second”というキーワードとしてSecondActivityに送る
-            SecondPage.putExtra("second", secondText)
-            startActivity(SecondPage)}
-
+            secondActivityIntent.putExtra("second", secondText)
+            startActivity(secondActivityIntent)}
     }
 }
 
