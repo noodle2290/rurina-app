@@ -17,11 +17,12 @@ class MainActivity : AppCompatActivity() {
         //intentButtonクリック時にSecondActivityへ画面遷移
         binding.intentButton.setOnClickListener {
             //hour_input_text1に入れられた数字をhourTextと定義する
-            val hourText = binding.hourInputText1.text.toString().toLong()
+
+            val hourText = binding.hourInputText1.text.toString().toLongOrNull()
             //y:EditTextに入れられた数字をminuteTextと定義する
-            val minuteText = binding.minuteInputText1.text.toString().toLong()
+            val minuteText = binding.minuteInputText1.text.toString().toLongOrNull()
             //z:EditTextに入れられた数字をsecondTextと定義する
-            val secondText = binding.secondInputText1.text.toString().toLong()
+            val secondText = binding.secondInputText1.text.toString().toLongOrNull()
 
 
 
